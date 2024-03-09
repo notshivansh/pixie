@@ -16,27 +16,3 @@
 
 load("@com_github_fmeum_rules_meta//meta:defs.bzl", "meta")
 load("//bazel/test_runners/qemu_with_kernel:runner.bzl", "qemu_with_kernel_interactive_runner")
-
-java_graal_binary = meta.wrap_with_transition(
-    native.java_binary,
-    {
-        "java_runtime_version": meta.replace_with("remotejdk_openjdk_graal_17"),
-    },
-    executable = True,
-)
-
-cc_clang_binary = meta.wrap_with_transition(
-    native.cc_binary,
-    {
-        "@//bazel/cc_toolchains:compiler": meta.replace_with("clang"),
-    },
-    executable = True,
-)
-
-qemu_interactive_runner = meta.wrap_with_transition(
-    qemu_with_kernel_interactive_runner,
-    {
-        "@//bazel/cc_toolchains:libc_version": meta.replace_with("glibc2_36"),
-    },
-    executable = True,
-)

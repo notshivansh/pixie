@@ -14,26 +14,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-load("//bazel:toolchain_transitions.bzl", "cc_clang_binary")
 
 package(default_visibility = ["//src/stirling:__subpackages__"])
 
 # We build with clang regardless of the bazel config.
 # This is test data, so we want determinism.
-cc_clang_binary(
-    name = "library.so",
-    srcs = ["library.c"],
-    copts = [
-        "-O0",
-        "-g",
-    ],
-    features = [
-        # disable the default optimization flags so we can set our own for this target.
-        "-default_opt_level_flags",
-        # disable sanitiziers so that the binary is deterministic regardless of bazel config.
-        "-asan",
-        "-msan",
-        "-tsan",
-    ],
-    linkshared = True,
-)

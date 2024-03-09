@@ -19,7 +19,6 @@ load("@io_bazel_rules_docker//java:image.bzl", "java_image")
 load("@rules_java//java:defs.bzl", "java_binary")
 load("//bazel:graal.bzl", "graal_native_binary")
 load("//bazel:pl_build_system.bzl", "pl_cc_binary")
-load("//bazel:toolchain_transitions.bzl", "java_graal_binary")
 load("//src/stirling/source_connectors/perf_profiler/testing:testing.bzl", "jdk_names")
 
 package(default_visibility = ["//src/stirling:__subpackages__"])
@@ -102,12 +101,6 @@ jdk_symlinks = [symlinks_by_jdk[jdk_name] if jdk_name in symlinks_by_jdk else {}
     for jdk_name in jdk_names
 ]
 
-java_graal_binary(
-    name = "graal_java_profiler_test",
-    srcs = ["ProfilerTest.java"],
-    args = ["-XX:+PreserveFramePointer"],
-    main_class = "ProfilerTest",
-)
 
 graal_native_binary(
     name = "graal_java_test_aot",

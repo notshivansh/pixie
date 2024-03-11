@@ -66,10 +66,6 @@ scala_register_toolchains()
 
 # These dependencies are needed by GRPC.
 
-load("@build_bazel_apple_support//lib:repositories.bzl", "apple_support_dependencies")
-
-apple_support_dependencies()
-
 load("//bazel:pl_workspace.bzl", "pl_container_images", "pl_model_files", "pl_workspace_setup")
 
 pl_workspace_setup()

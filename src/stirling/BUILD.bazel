@@ -46,7 +46,6 @@ pl_cc_library(
         "//src/shared/types/typespb/wrapper:cc_library",
         "//src/stirling/bpf_tools:cc_library",
         "//src/stirling/core:cc_library",
-        "//src/stirling/proto:stirling_pl_cc_proto",
         "//src/stirling/source_connectors/dynamic_bpftrace:cc_library",
         "//src/stirling/source_connectors/dynamic_tracer:cc_library",
         "//src/stirling/source_connectors/jvm_stats:cc_library",

@@ -35,7 +35,6 @@ pl_cc_library_internal(
         exclude = ["test_utils.h"],
     ),
     deps = [
-        "//src/common/base/statuspb:status_pl_cc_proto",
         "@com_google_farmhash//:farmhash",
         "@com_google_googletest//:gtest_prod",
     ],

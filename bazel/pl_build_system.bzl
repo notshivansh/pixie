@@ -93,7 +93,6 @@ def pl_common_linkopts():
             "-lunwind",
         ],
         # The OSX system library transitively links common libraries (e.g., pthread).
-        "@bazel_tools//tools/osx:darwin": [],
         "//conditions:default": [
             "-pthread",
             "-lunwind",

@@ -43,7 +43,6 @@ pl_cc_proto_library(
     deps = [
         "//src/api/proto/uuidpb:uuid_pl_cc_proto",
         "//src/carnot/planpb:plan_pl_cc_proto",
-        "//src/common/base/statuspb:status_pl_cc_proto",
         "//src/shared/bloomfilterpb:bloomfilter_pl_cc_proto",
         "//src/shared/metadatapb:metadata_pl_cc_proto",
         "//src/table_store/schemapb:schema_pl_cc_proto",

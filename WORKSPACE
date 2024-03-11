@@ -49,9 +49,6 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
 
-load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
-
-grpc_deps()
 
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
 
@@ -68,9 +65,6 @@ load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
 scala_register_toolchains()
 
 # These dependencies are needed by GRPC.
-load("@build_bazel_rules_apple//apple:repositories.bzl", "apple_rules_dependencies")
-
-apple_rules_dependencies()
 
 load("@build_bazel_apple_support//lib:repositories.bzl", "apple_support_dependencies")
 
@@ -104,10 +98,6 @@ rules_pkg_dependencies()
 
 # The docker images can't be loaded until all pip_deps are satisfied.
 pl_container_images()
-
-load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
-
-grpc_extra_deps()
 
 load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
 

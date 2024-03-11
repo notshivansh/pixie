@@ -42,7 +42,6 @@ pl_cc_proto_library(
         "//src/api/proto/uuidpb:uuid_pl_cc_proto",
         "//src/carnot/planner/distributedpb:distributed_plan_pl_cc_proto",
         "//src/carnot/planner/dynamic_tracing/ir/logicalpb:logical_pl_cc_proto",
-        "//src/common/base/statuspb:status_pl_cc_proto",
         "//src/shared/cvmsgspb:cvmsgs_pl_cc_proto",
         "//src/shared/types/typespb/wrapper:cc_library",
         "//src/table_store/schemapb:schema_pl_cc_proto",
